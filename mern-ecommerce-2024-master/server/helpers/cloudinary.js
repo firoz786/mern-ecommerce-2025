@@ -1,10 +1,13 @@
+// filepath: /Users/firozalam/Projects/mern_project/mern-ecommerce-2024/server/helpers/cloudinary.js
 const cloudinary = require("cloudinary").v2;
 const multer = require("multer");
+require("dotenv").config(); // Load environment variables
 
+// Configuration
 cloudinary.config({
-  cloud_name: "dxzwr59u2",
-  api_key: "613239527516389",
-  api_secret: "o9K93ZpJHoleZRlnsAb82jrnstY",
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 const storage = new multer.memoryStorage();
